@@ -1,13 +1,11 @@
 package test.java.streams;
 
-import java.util.ArrayList;
+
 import java.util.Arrays;
 import java.util.Comparator;
 import java.util.List;
 import java.util.Optional;
-import java.util.Random;
 import java.util.stream.Collectors;
-import java.util.stream.Stream;
 import test.java.entity.Product;
 
 public class Test {
@@ -30,7 +28,6 @@ List<Product> products= Arrays.asList(
     System.out.println(collect);
 //option 2
     String prods = products.stream()
-        //.collect(Collectors.maxBy(Comparator.comparing(Product::getPrice)))
         .max(Comparator.comparing(Product::getPrice))
         .map(Product::getName).orElse("not found");
     System.out.println(prods);
